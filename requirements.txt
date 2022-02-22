@@ -6,4 +6,4 @@ matplotlib==3.4.1
 datetime
 fbprophet
 plotly
-
+pystan
