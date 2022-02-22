@@ -1,12 +1,10 @@
 streamlit==0.79.0
-import streamlit as st
-import yfinance as yf
-import seaborn as sb 
-import pandas as pd 
-import matplotlib.pyplot as plt
+yfinance
+seaborn
+pandas==1.2.3
+matplotlib==3.4.1
+datetime
+fbprophet
+fbprophet.plot
+plotly
 
-from datetime import date
-from fbprophet import Prophet
-from fbprophet.plot import plot_plotly
-from plotly import graph_objs as go
- 
