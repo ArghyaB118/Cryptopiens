@@ -1,3 +1,4 @@
+streamlit==0.79.0
 import streamlit as st
 import yfinance as yf
 import seaborn as sb 
