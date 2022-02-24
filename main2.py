@@ -6,53 +6,53 @@ from datetime import date
 import yfinance as yf
 #from fbprophet import Prophet
 #from fbprophet.plot import plot_plotly
-#from plotly import graph_objs as go
+from plotly import graph_objs as go
 
 st.title('Crypto Price Forecast Application: Cryptopiens.tech')
 
-# START = st.date_input("State the starting date", date(2021, 1, 1))
-# START = START.strftime("%Y-%m-%d")
-# st.write('The system starts at:', START)
-# #START = "2021-01-01"
-# TODAY = date.today().strftime("%Y-%m-%d")
+START = st.date_input("State the starting date", date(2021, 1, 1))
+START = START.strftime("%Y-%m-%d")
+st.write('The system starts at:', START)
+#START = "2021-01-01"
+TODAY = date.today().strftime("%Y-%m-%d")
 
-# crypto = ('BTC-USD', 'ETH-USD', 'USDT-USD', 'DOGE-USD', 'XRP-USD', 'LTC-USD')
-# selected_crypto = st.selectbox('Select dataset for prediction', crypto)
-# #stocks = ('GOOGL', 'AAPL', 'MSFT', 'TSLA', 'FB', 'PFE')
-# #selected_stock = st.selectbox('Select dataset for prediction', stocks)
+crypto = ('BTC-USD', 'ETH-USD', 'USDT-USD', 'DOGE-USD', 'XRP-USD', 'LTC-USD')
+selected_crypto = st.selectbox('Select dataset for prediction', crypto)
+#stocks = ('GOOGL', 'AAPL', 'MSFT', 'TSLA', 'FB', 'PFE')
+#selected_stock = st.selectbox('Select dataset for prediction', stocks)
 
-# n_quarters = st.slider('Quarter of prediction:', 1, 4)
-# period = n_quarters * 3 * 30
+n_quarters = st.slider('Quarter of prediction:', 1, 4)
+period = n_quarters * 3 * 30
 
-# budget = st.number_input('Insert your budget')
-# st.write('Your budget is: ', budget)
+budget = st.number_input('Insert your budget', 100)
+st.write('Your budget is: ', budget)
 
-# risk_allowance = st.number_input('Insert your risk allowance')
-# st.write('Your risk allowance is: ', risk_allowance)
+risk_allowance = st.number_input('Insert your risk allowance', 50)
+st.write('Your risk allowance is: ', risk_allowance)
 
-# @st.cache
-# def load_data(ticker):
-# 	data = yf.download(ticker, START, TODAY)
-# 	data.reset_index(inplace=True)
-# 	return data
+@st.cache
+def load_data(ticker):
+	data = yf.download(ticker, START, TODAY)
+	data.reset_index(inplace=True)
+	return data
 
 	
-# data_load_state = st.text('Loading data...')
-# data = load_data(selected_crypto)
-# data_load_state.text('Loading data... done!')
+data_load_state = st.text('Loading data...')
+data = load_data(selected_crypto)
+data_load_state.text('Loading data... done!')
 
-# st.subheader('Raw data')
-# st.write(data.tail())
+st.subheader('Raw data')
+st.write(data.tail())
 
-# # Plot raw data
-# def plot_raw_data():
-# 	fig = go.Figure()
-# 	fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name="stock_open"))
-# 	fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name="stock_close"))
-# 	fig.layout.update(title_text='Time Series data with Rangeslider', xaxis_rangeslider_visible=True)
-# 	st.plotly_chart(fig)
+# Plot raw data
+def plot_raw_data():
+	fig = go.Figure()
+	fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name="stock_open"))
+	fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name="stock_close"))
+	fig.layout.update(title_text='Time Series data with Rangeslider', xaxis_rangeslider_visible=True)
+	st.plotly_chart(fig)
 	
-# plot_raw_data()
+plot_raw_data()
 
 # # Predict forecast with Prophet.
 # df_train = data[['Date','Close']]
@@ -76,9 +76,9 @@ st.title('Crypto Price Forecast Application: Cryptopiens.tech')
 # st.write(fig2)
 
 
-# import seaborn as sb 
-# import pandas as pd 
-# import matplotlib.pyplot as plt 
+import seaborn as sb 
+import pandas as pd 
+import matplotlib.pyplot as plt 
 # fig3 = plt.figure()
 
 

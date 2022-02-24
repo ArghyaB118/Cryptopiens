@@ -24,10 +24,10 @@ selected_crypto = st.selectbox('Select dataset for prediction', crypto)
 n_quarters = st.slider('Quarter of prediction:', 1, 4)
 period = n_quarters * 3 * 30
 
-budget = st.number_input('Insert your budget')
+budget = st.number_input('Insert your budget', 100)
 st.write('Your budget is: ', budget)
 
-risk_allowance = st.number_input('Insert your risk allowance')
+risk_allowance = st.number_input('Insert your risk allowance', 50)
 st.write('Your risk allowance is: ', risk_allowance)
 
 @st.cache
