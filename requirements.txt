@@ -6,5 +6,5 @@ matplotlib==3.4.1
 datetime
 plotly
 numpy==1.20.2
-
+fbprophet==0.7.1
 
