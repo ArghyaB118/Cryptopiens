@@ -1,5 +1,7 @@
 # pip3 install pandas matplotlib pystan=2.19.1.1 streamlit fbprophet yfinance plotly seaborn pyplot
 # http://lethalletham.com/ForecastingAtScale.pdf
+# https://devcenter.heroku.com/articles/heroku-cli
+# https://devcenter.heroku.com/articles/custom-domains
 import streamlit as st
 from datetime import date
 
@@ -108,3 +110,8 @@ plt.ylabel("Change in predicted price")
 plt.legend(labels=crypto)
 plt.savefig('predictSuggest.png')
 st.write(fig3)
+
+
+st.write("**Cofounders:**")
+st.write("Anushka Banerjee, Ph.D. Candidate, Electrical Engineering, Stony Brook University")
+st.write("Arghya Bhattacharya, Ph.D. Candidate, Computer Science, Stony Brook University")
