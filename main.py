@@ -2,6 +2,10 @@
 # http://lethalletham.com/ForecastingAtScale.pdf
 # https://devcenter.heroku.com/articles/heroku-cli
 # https://devcenter.heroku.com/articles/custom-domains
+
+# Heroku Guides:
+# https://towardsdatascience.com/deploying-a-basic-streamlit-app-to-heroku-be25a527fcb3
+# https://towardsdatascience.com/a-quick-tutorial-on-how-to-deploy-your-streamlit-app-to-heroku-874e1250dadd
 import streamlit as st
 from datetime import date
 
